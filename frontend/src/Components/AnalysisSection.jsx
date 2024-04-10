@@ -158,7 +158,7 @@ const AnalysisSection = () => {
 
           {/* busy user  */}
           {
-            !selectedUser && (
+            (!selectedUser || selectedUser === "Overall") && (
               <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
                 <h1 className="mb-5">Most Busy User</h1>
                 <div className="m-auto">
@@ -169,7 +169,7 @@ const AnalysisSection = () => {
           }
 
           {
-            !selectedUser && (<div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
+            (!selectedUser || selectedUser === "Overall") && (<div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
               <div className="text-center mx-auto">
                 <UserDataTable data={listbusyuser} />
               </div>

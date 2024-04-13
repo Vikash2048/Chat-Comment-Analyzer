@@ -70,7 +70,7 @@ const UploadSection = () => {
 
   return (
     <div className="bg-gray-700 p-8 my-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Upload WhatsApp Chat File</h2>
+      <h2 className="font-averia text-2xl font-bold mb-4">Upload WhatsApp Chat File</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="file"

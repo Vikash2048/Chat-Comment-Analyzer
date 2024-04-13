@@ -1,7 +1,7 @@
 const Navbar = () => {
   // bg-gray-800
     return (
-      <nav className="bg-black px-4 py-2">
+      <nav className="font-bree bg-black px-4 py-2">
         <div className="max-w-7xl  mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-4">
             {/* logo  */}
@@ -15,7 +15,7 @@ const Navbar = () => {
           {/* Placeholder for other navbar content */}
           <div className="cursor-pointer">
             {/* Links or buttons can be placed here */}
-            <img src="/images/menu.png" alt="" />
+            <a href="#">Guide</a>
           </div>
         </div>
       </nav>

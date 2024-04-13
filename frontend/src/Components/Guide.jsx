@@ -11,7 +11,7 @@ const Guide = () => {
       
       <div className='flex gap-24 justify-center items-center w-[1400px] m-5 p-10 bg-slate-800 rounded-xl'>
         {/* Images showing steps to export whatsapp chat.. */}
-        <img src="../images/guide.jpg" alt="Guide image" className='h-[400px] w-[700px] rounded-xl' />
+        <img src="../images/guide.jpg" alt="Guide image" className='h-[500px] w-[800px] rounded-xl' />
         
         {/* Steps to export whatsapp chat.. */}
         <div className='font-bree text-xl text-white mt-5'>

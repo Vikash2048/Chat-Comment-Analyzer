@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from helper import (
+from whatsappAnalyserFiles.helper import (
     fetch_stats, monthly_timeline, daily_timeline, week_activity_map,
     month_activity_map, activity_heatmap, most_busy_users, most_common_words, emoji_helper
 )
-from preprocessor import preprocess
+from whatsappAnalyserFiles.preprocessor import preprocess
 import pandas as pd
 
 app = Flask(__name__)

@@ -3,6 +3,7 @@ import { DataContext } from "./Context/DataContext"
 import Fpage from './Pages/Fpage';
 import Whatsapp from "./Analyzer's/Whatsapp"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Guide from './Components/Guide';
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
           <Routes>
             <Route path='/' exact Component={Fpage} />
             <Route path='/whatsappAnalyzer' Component={Whatsapp} />
-            </Routes>
+            <Route path='/Guide' Component={Guide} />
+          </Routes>
         </DataContext.Provider>
       </>
     </Router>

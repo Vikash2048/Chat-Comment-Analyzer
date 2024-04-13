@@ -69,23 +69,23 @@ const UploadSection = () => {
   }, [file]);
 
   return (
-    <div className="bg-gray-700 p-8 my-6 rounded-lg shadow-md">
+    <div className="text-center bg-gray-700 p-8 my-6 rounded-lg shadow-md">
       <h2 className="font-averia text-2xl font-bold mb-4">Upload WhatsApp Chat File</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="file"
           onChange={handleFileChange}
-          className="text-sm text-gray-50
+          className="font-bree text-sm text-gray-50
                      py-2 px-3 rounded-lg border border-gray-200
                      file:bg-gray-800 file:border-none
                      file:px-4 file:py-2 file:rounded file:text-sm
-                     file:font-semibold file:text-gray-50
+                     file:text-gray-50
                      hover:file:bg-gray-700"
         />
         <button
           type="submit"
-          className="mt-4 ml-4 bg-green-600 hover:bg-green-700
-                     text-white font-bold py-2 px-4 rounded"
+          className="font-bree mt-4 ml-4 bg-green-600 hover:bg-green-700
+                     text-white py-2 px-4 rounded"
         >
           Analyze
         </button>

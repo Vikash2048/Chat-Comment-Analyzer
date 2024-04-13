@@ -3,7 +3,7 @@ import React from 'react'
 const Home = () => {
     return (
         <>
-        <div id='main' className='bg-[url("https://i.pinimg.com/564x/61/c9/e0/61c9e0ba50bb0bdded1db82f761d912c.jpg")] bg-[length:630px_800px] md:bg-[length:1550px_800px] bg-no-repeat bg-fixed text-white'>
+        <div id='main' className='bg-[url("https://i.pinimg.com/564x/61/c9/e0/61c9e0ba50bb0bdded1db82f761d912c.jpg")] bg-[length:630px_800px] sm:bg-[length:1550px_800px] bg-no-repeat bg-fixed text-white'>
             {/* NAVBAR */}
             <div id='navbar' className='sticky top-0 z-20 rounded-xl backdrop-blur-2xl hover:bg-[#08387B] duration-1000'>
                 <ul className='flex justify-around p-4 text-3xl font-bree font-extrabold'>

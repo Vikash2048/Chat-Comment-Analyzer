@@ -1,11 +1,23 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import pandas as pd
+
 from whatsappAnalyserFiles.helper import (
     fetch_stats, monthly_timeline, daily_timeline, week_activity_map,
     month_activity_map, activity_heatmap, most_busy_users, most_common_words, emoji_helper
 )
 from whatsappAnalyserFiles.preprocessor import preprocess
-import pandas as pd
+
+from youtubeAnalyserFiles.Yhelper import (
+    fetch_video_details, fetch_all_comments, format_datetime
+)
+
+from youtubeAnalyserFiles.YPreprocess import (
+    preprocess_text_for_sentiment, remove_stopwords, analyze_sentiment, categorize_sentiment
+)
+
+
+
 
 app = Flask(__name__)
 CORS(app,origins="*",supports_credentials=True)
@@ -63,6 +75,8 @@ def user():
 
 @app.route('/analyze', methods=['POST'])
 def analyze_chat():
+
+
     file = request.files['file']
     
     if file:
@@ -132,6 +146,47 @@ def analyze_chat():
         return jsonify(Stats,UserList,MonthlyTimeline,DailyTimeline,MostBusyDay,MostBusyMonth,MostBusyUser)
     else:
         return jsonify({'error': 'No file provided'}), 400
+
+# youtube 
+@app.route('/youtubeAnalyzer', methods=['POST'])
+def analyze_comment():
+     
+    url = request.form.get("url")
+
+    sentiment_counts = []
+
+    if url:
+        video_detail = fetch_video_details(url)
+
+        video_comments = fetch_all_comments(url)
+
+        comments_df = pd.DataFrame(video_comments, columns=['author','published_at','updated_at','like_count','text'])
+
+        if not comments_df.empty:
+
+            comments_df['published_at'] = comments_df['published_at'].apply(format_datetime)
+            comments_df['updated_at'] = comments_df['updated_at'].apply(format_datetime)
+
+            comments_df['text_preprocessed'] = comments_df['text'].apply(preprocess_text_for_sentiment)
+
+            comments_df['text_without_stopwords'] = comments_df['text_preprocessed'].apply(remove_stopwords)
+
+            comments_df['sentiment_score'] = comments_df['text_without_stopwords'].apply(analyze_sentiment)
+
+            comments_df['sentiment_category'] = comments_df['sentiment_score'].apply(categorize_sentiment)
+
+            # data 
+            sentiment_counts = comments_df['sentiment_category'].value_counts().to_dict()
+
+        print(sentiment_counts)
+        return jsonify(video_detail,sentiment_counts)
+    else:
+        print("error is url: ",url)
+        return jsonify({'error': 'No file provided'}), 400
+
+    
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)  

@@ -12,7 +12,10 @@ const Content = () => {
           <Link to="/whatsappAnalyzer">
             <div className='grid place-content-center h-screen w-full hover:bg-slate-800/65 hover:text-orange-700 hover:scale-125 active:bg-orange-400 duration-1000'><h3 className='text-center'>WhatsApp</h3></div>
           </Link>
+          
+          <Link to="/youtubeAnalyzer">
           <div className='grid place-content-center h-screen w-full hover:bg-slate-800/65 hover:text-orange-700 hover:scale-125 active:bg-orange-400 duration-1000'><h3 className='text-center'>YouTube</h3></div>
+          </Link>
           <div className='grid place-content-center h-screen w-full hover:bg-slate-800/65 hover:text-orange-700 hover:scale-125 active:bg-orange-400 duration-1000'><h3 className='text-center'>Instagram</h3></div>
           <div className='grid place-content-center h-screen w-full hover:bg-slate-800/65 hover:text-orange-700 hover:scale-125 active:bg-orange-400 duration-1000'><h3 className='text-center'>Twitter</h3></div>
         </div>

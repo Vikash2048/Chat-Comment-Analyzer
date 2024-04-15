@@ -22,11 +22,15 @@ function App() {
   // YT states 
   const [videoDetail,setVideoDetail] = useState([]);
   const [sa,setSA] = useState([]);
+  const [positiveComment, setPositiveComment] = useState([]);
+  const [negetiveComment, setNegetiveComment] = useState([]);
+  const [neutralComment, setNeutralComment] = useState([]);
+  const [topComment, setTopComment] = useState([]);
 
   return (
     <Router>
       <>
-        <YoutubeDataContext.Provider value={{videoDetail, setVideoDetail, sa, setSA}}>
+        <YoutubeDataContext.Provider value={{videoDetail, setVideoDetail, sa, setSA, positiveComment, setPositiveComment, negetiveComment, setNegetiveComment, neutralComment, setNeutralComment, topComment, setTopComment}}>
           <DataContext.Provider value={{ userlist, setUserList, stats, setStats, monthlytimeline, setMonthlyTimeline, dailytimeline, setDailyTimeline, mostbusyday, setMostBusyDay, mostbusymonth, setMostBusyMonth, file, setFile, mostbusyuser, setMostBusyUser, listbusyuser, setListBusyUser }}>
             <Routes>
               <Route path='/' exact Component={Fpage} />

@@ -155,6 +155,11 @@ def analyze_comment():
 
     sentiment_counts = []
 
+    positive_comments_array = []
+    negative_comments_array = []
+    neutral_comments_array = []
+    top_liked_comments = []
+
     if url:
         video_detail = fetch_video_details(url)
 
@@ -178,8 +183,26 @@ def analyze_comment():
             # data 
             sentiment_counts = comments_df['sentiment_category'].value_counts().to_dict()
 
-        print(sentiment_counts)
-        return jsonify(video_detail,sentiment_counts)
+            # top 10 positive comments 
+            top_comments = comments_df[comments_df['sentiment_category'] == 'positive'].nlargest(10, 'sentiment_score')
+
+            positive_comments_array = top_comments.to_dict(orient='records')
+
+            # top 10 negetive comments 
+            top_comments = comments_df[comments_df['sentiment_category'] == 'negative'].nlargest(10, 'sentiment_score')
+
+            negative_comments_array = top_comments.to_dict(orient='records')
+
+            # top 10 neutral comments 
+            top_comments = comments_df[comments_df['sentiment_category'] == 'neutral'].nlargest(10, 'sentiment_score')
+
+            neutral_comments_array = top_comments.to_dict(orient='records')
+
+            comments_df['like_count'] = comments_df['like_count'].astype(int)
+            top_liked_comments = comments_df.nlargest(10, 'like_count').to_dict(orient="records")
+
+        print(top_liked_comments)
+        return jsonify(video_detail,sentiment_counts,positive_comments_array, negative_comments_array, neutral_comments_array, top_liked_comments)
     else:
         print("error is url: ",url)
         return jsonify({'error': 'No file provided'}), 400

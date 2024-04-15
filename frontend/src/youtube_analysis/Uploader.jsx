@@ -4,7 +4,7 @@ import axios from "axios"
 
 const Uploader = () => {
 
-    const {setVideoDetail, setSA } = useContext(YoutubeDataContext);
+    const {setVideoDetail, setSA, setPositiveComment, setNegetiveComment, setNeutralComment, setTopComment } = useContext(YoutubeDataContext);
     const [url, setUrl] = useState([]);
 
     const handleChange = (e) => {
@@ -33,9 +33,13 @@ const Uploader = () => {
                 }
             })
 
-            console.log(response.data);
+            console.log(response.data[5]);
             setVideoDetail(response.data[0]);
             setSA(response.data[1]);
+            setPositiveComment(response.data[2]);
+            setNegetiveComment(response.data[3]);
+            setNeutralComment(response.data[4]);
+            setTopComment(response.data[5]);
         } catch (error) {
             console.log("error while sending url in uploader", error.message);
         }

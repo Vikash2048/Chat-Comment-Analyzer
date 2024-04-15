@@ -154,6 +154,7 @@ def analyze_comment():
     url = request.form.get("url")
 
     sentiment_counts = []
+    # creating a empty list 
 
     positive_comments_array = []
     negative_comments_array = []

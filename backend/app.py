@@ -201,10 +201,10 @@ def analyze_comment():
             comments_df['like_count'] = comments_df['like_count'].astype(int)
             top_liked_comments = comments_df.nlargest(10, 'like_count').to_dict(orient="records")
 
-        print(top_liked_comments)
+        # print(top_liked_comments)
         return jsonify(video_detail,sentiment_counts,positive_comments_array, negative_comments_array, neutral_comments_array, top_liked_comments)
     else:
-        print("error is url: ",url)
+        # print("error is url: ",url)
         return jsonify({'error': 'No file provided'}), 400
 
     

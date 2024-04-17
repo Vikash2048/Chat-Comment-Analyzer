@@ -4,7 +4,7 @@ import { YoutubeDataContext } from "./Context/YoutubeDataContext"
 import Fpage from './Pages/Fpage';
 import Whatsapp from "./Analyzer's/Whatsapp"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Guide from './Components/Guide';
+import Guide from "./Analyzer's/Guide";
 import YoutubeAnalyzer from './youtube_analysis/YoutubeAnalyzer';
 
 

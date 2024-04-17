@@ -28,6 +28,7 @@ function App() {
   const [topComment, setTopComment] = useState([]);
 
   return (
+  // console.log("hi guys how are you")
     <Router>
       <>
         <YoutubeDataContext.Provider value={{videoDetail, setVideoDetail, sa, setSA, positiveComment, setPositiveComment, negetiveComment, setNegetiveComment, neutralComment, setNeutralComment, topComment, setTopComment}}>

@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { DataContext } from "./Context/DataContext"
 import { YoutubeDataContext } from "./Context/YoutubeDataContext"
 import Fpage from './Pages/Fpage';
-import Whatsapp from "./Analyzer's/Whatsapp"
+import Whatsapp from "./WhatsApp_Analyzer/WhatsApp"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Guide from "./Analyzer's/Guide";
-import YoutubeAnalyzer from './youtube_analysis/YoutubeAnalyzer';
+import Guide from "./WhatsApp_Analyzer/Guide";
+import YoutubeAnalyzer from './YouTube_Analyzer/YouTube';
 
 
 function App() {

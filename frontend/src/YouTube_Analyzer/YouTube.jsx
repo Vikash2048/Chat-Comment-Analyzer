@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
-import Uploader from './Uploader'
-import Analysis from './Analysis'
+import Uploader from './UploadSection'
+import Analysis from './AnalysisSection'
 
 const YoutubeAnalyzer = () => {
   return (

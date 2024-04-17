@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import { DataContext } from "../Context/DataContext";
-import CustomLineChart from "../Components/Charts/CustomLineChart";
-import CustomDailyChart from "../Components/Charts/CostumDailyChart";
-import BusyDayChart from "../Components/Charts/BusyDayChart";
-import BusyMonthChart from "../Components/Charts/BusyMonthChart";
-import BusyUserChart from "../Components/Charts/BusyUserChat";
+import CustomLineChart from "../WhatsApp_Analyzer/Charts/CustomLineChart";
+import CustomDailyChart from "../WhatsApp_Analyzer/Charts/CostumDailyChart";
+import BusyDayChart from "../WhatsApp_Analyzer/Charts/BusyDayChart";
+import BusyMonthChart from "../WhatsApp_Analyzer/Charts/BusyMonthChart";
+import BusyUserChart from "../WhatsApp_Analyzer/Charts/BusyUserChat";
 import axios from "axios"
-import UserDataTable from "../Components/Charts/UserDataTable";
+import UserDataTable from "../WhatsApp_Analyzer/Charts/UserDataTable";
 
 
 const AnalysisSection = () => {

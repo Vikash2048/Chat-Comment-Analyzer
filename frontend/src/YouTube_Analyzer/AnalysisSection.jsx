@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { YoutubeDataContext } from '../Context/YoutubeDataContext'
 
-import BarChart from './chart/BarChart'
-import PieChart from './chart/PieChart'
+import BarChart from './Charts/BarChart'
+import PieChart from './Charts/PieChart'
 
 const Analysis = () => {
     const { videoDetail, sa, positiveComment, negetiveComment, neutralComment, topComment } = useContext(YoutubeDataContext)

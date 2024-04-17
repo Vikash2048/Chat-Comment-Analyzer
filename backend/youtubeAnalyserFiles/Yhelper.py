@@ -4,11 +4,15 @@ from urllib.parse import urlparse, parse_qs
 import re
 from datetime import datetime
 from html import unescape
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
 
 # YouTube API setup
 api_service_name = "youtube"
 api_version = "v3"
-DEVELOPER_KEY = "AIzaSyD_Bl0LCZlRb3yLtUcblozmA4rnQvxRdFM"  # Replace YOUR_API_KEY with your actual YouTube Data API key.
+DEVELOPER_KEY = os.getenv("API_KEY")  # Replace YOUR_API_KEY with your actual YouTube Data API key.
 youtube = build(api_service_name, api_version, developerKey=DEVELOPER_KEY)
 
 def get_video_id(url):

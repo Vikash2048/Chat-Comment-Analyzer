@@ -50,3 +50,10 @@ def categorize_sentiment(score):
         return 'negative'
     else:
         return 'neutral'
+
+
+def preprocessing_analysing():
+    # downloding nltk 
+    download_nltk_resources()
+
+    preprocess_text_for_sentiment()

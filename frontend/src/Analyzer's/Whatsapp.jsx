@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Header from '../Components/Header'
-import UploadSection from '../Components/UploadSection'
-import AnalysisSection from '../Components/AnalysisSection'
+import Navbar from './Navbar'
+import Header from './Header'
+import UploadSection from './UploadSection'
+import AnalysisSection from './AnalysisSection'
 
 const Whatsapp = () => {
     return (

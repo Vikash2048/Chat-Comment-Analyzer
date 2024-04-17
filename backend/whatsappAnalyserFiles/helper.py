@@ -51,7 +51,7 @@ def most_busy_users(df):
 
 def most_common_words(selected_user,df):
 
-    f = open('backend/stop_hinglish.txt','r')
+    f = open('backend/whatsappAnalyserFiles/stop_hinglish.txt','r')
     stop_words = f.read()
 
     if selected_user != 'Overall':

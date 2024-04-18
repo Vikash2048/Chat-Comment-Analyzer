@@ -14,12 +14,6 @@ export default {
       }
     },
   },
-<<<<<<< HEAD
   plugins: [require("daisyui")],
 }
 
-=======
-  plugins: [],
-  style: {}
-}
->>>>>>> 706bf8535a7aa38b6eb037a569f0e7b3911d926d

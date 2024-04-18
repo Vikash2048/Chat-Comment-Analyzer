@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_010svn90', 'template_010svn90', form.current, {
+        publicKey: '7e76wQ6JnVjNNWHb7',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert("Message Sent..!!");
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
   return (
     <>
     <div id='contact' className='bg-[url("https://i.pinimg.com/564x/78/4f/05/784f05041443a8a68202ae5eed0a43b3.jpg")] bg-[length:630px_800px] md:bg-[length:1550px_800px] bg-no-repeat bg-fixed text-white'>
@@ -9,20 +30,20 @@ const Contact = () => {
       </div>
 
       <div className='grid place-content-center h-screen w-full font-averia px-4 text-center text-xl'>
-        <form className='flex flex-col gap-5 justify-start'>
+        <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-5 justify-start'>
           <label for='name' className='flex gap-14 justify-end items-center'>
             <span className="text-3xl font-bold">Name: </span>
-            <input type="text" name="name" id='name' placeholder='Your Name' className="rounded-lg px-2 py-1 text-black"/>
+            <input type="text" name="from_name" id='name' placeholder='Your Name' className="rounded-lg px-2 py-1 text-black"/>
           </label>
           
           <label for="email" className='flex gap-14 justify-end items-center'>
             <span className="text-3xl font-bold">Email: </span>
-            <input type="text" name="email" id="email" cols="10" placeholder="you@gmail.com" className="rounded-lg px-2 py-1 text-black" />
+            <input type="email" name="from_email" id="email" placeholder="you@gmail.com" className="rounded-lg px-2 py-1 text-black" />
           </label>
 
           <label for="Textarea" className='flex gap-14 justify-end items-center'>
-            <span className="text-3xl font-bold">Feedback: </span>
-            <textarea name="textarea" id="Textarea" rows="3" placeholder="Type Something.." className="rounded-lg px-2 py-1 text-black"></textarea>
+            <span className="text-3xl font-bold">Message: </span>
+            <textarea name="message" id="Textarea" rows="3" placeholder="Type Something.." className="rounded-lg px-2 py-1 text-black"></textarea>
           </label>
 
           <button className='mt-8'>

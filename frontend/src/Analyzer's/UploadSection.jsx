@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { DataContext } from "../Context/DataContext";
 import axios from "axios";
 
@@ -6,6 +6,7 @@ const UploadSection = () => {
 
   // #using context api 
   const { setUserList, setStats, setMonthlyTimeline, setDailyTimeline, setMostBusyDay,setMostBusyMonth,file,setFile, setMostBusyUser,setListBusyUser} = useContext(DataContext);
+  const [loading, setLoading] = useState(false);
 
 
   // # taking file 
@@ -26,6 +27,7 @@ const UploadSection = () => {
     const formData = new FormData();
     formData.append("file", file);
 
+    setLoading(true);
     try {
       const response = await axios.post("http://localhost:5000/analyze", formData, {
         headers: {
@@ -57,6 +59,8 @@ const UploadSection = () => {
         console.error("Error setting up request:", error.message);
       }
       alert("Error in file uploading. See console for details.");
+    } finally {
+      setLoading(false);
     }
 
   };
@@ -90,6 +94,7 @@ const UploadSection = () => {
           Analyze
         </button>
       </form>
+      {loading && (<div className='flex items-center text-2xl mt-4 gap-4'> <p>Loading Data... </p> <span className="loading loading-infinity loading-lg"></span> </div>)}
     </div>
   );
 };

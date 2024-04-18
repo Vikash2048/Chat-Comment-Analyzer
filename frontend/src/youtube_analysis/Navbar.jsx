@@ -12,11 +12,6 @@ const Navbar = () => {
               />
               <span className="text-xl font-semibold">Youtube Comment Analyzer</span>
             </div>
-            {/* Placeholder for other navbar content */}
-            <div className="cursor-pointer">
-              {/* Links or buttons can be placed here */}
-              <img src="/images/menu.png" alt="" />
-            </div>
           </div>
         </nav>
       );

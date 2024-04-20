@@ -8,7 +8,7 @@ const Content = () => {
 
   return (
     <>
-      <div id='content' className='bg-[url("https://i.pinimg.com/564x/40/f0/e3/40f0e3534cefc92372665093d9217734.jpg")] h-lvh w-full bg-cover bg-no-repeat text-white '>
+      <div id='content' className='bg-[url("../images/contentbg.jpg")] h-lvh w-full bg-cover bg-no-repeat text-white '>
 
         <div id='title1' className='sticky top-0 z-20 rounded-xl backdrop-blur-2xl hover:bg-[#08387B] duration-1000'>
           <h2 className='font-bree uppercase p-4 text-center text-5xl md:text-7xl'>Analyzers</h2>

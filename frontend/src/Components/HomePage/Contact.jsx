@@ -24,12 +24,12 @@ const Contact = () => {
 
   return (
     <>
-      <div id='contact' className='bg-[url("https://i.pinimg.com/564x/78/4f/05/784f05041443a8a68202ae5eed0a43b3.jpg")] w-full h-lvh bg-cover bg-no-repeat  text-white'>
+      <div id='contact' className='bg-[url("../images/contactbg.jpg")] w-full h-lvh bg-cover bg-no-repeat  text-white'>
         <div id='title2' className='sticky top-0 z-20 rounded-xl backdrop-blur-2xl hover:bg-[#08387B] duration-1000'>
           <h2 className='font-bree uppercase p-4 text-center text-5xl md:text-7xl'>contact us</h2>
         </div>
 
-        <div className="md:w-1/2 h-auto rounded-2xl bg-slate-100 shadow-lg shadow-red-500/50 flex flex-col px-16 py-10 gap-1 mx-auto md:mt-5 mt-16">
+        <div className="font-averia md:w-1/2 h-auto rounded-2xl bg-slate-100 shadow-lg shadow-red-500/50 flex flex-col px-16 py-10 gap-1 mx-auto md:mt-5 mt-16">
                 <p className="text-lg font-medium text-black">  ANY QUESTIONS?</p>
                 <h3 className="text-3xl font-bold text-black">Send us a Message</h3>
                 <form  className="flex flex-col "ref={form} onSubmit={sendEmail}>

@@ -56,15 +56,15 @@ const AnalysisSection = () => {
     <>
       {stats[0] && (
         <div className="bg-gray-700 p-8 my-6 rounded-lg shadow-md overflow-hidden">
-          <h2 className="text-2xl font-bold mb-4">Analysis Results</h2>
+          <h2 className="font-averia text-2xl font-bold mb-4">Analysis Results</h2>
           <div className="flex flex-col  gap-4">
 
             {/* stats  */}
             {
               stats[0] && (
                 <div className="bg-gray-800 p-4 rounded-lg">
-                  <h1 className="text-lg font-semibold">Top Statistics</h1>
-                  <div className="text-sm flex  justify-between text-center px-10">
+                  <h1 className="font-averia text-lg font-semibold">Top Statistics</h1>
+                  <div className="font-bree text-sm flex  justify-between text-center px-10">
                     <div >
                       <h3>Total Messages </h3>
                       <p>{stats[0]}</p>
@@ -89,8 +89,8 @@ const AnalysisSection = () => {
             {
               stats[0] && (
                 <div className="bg-gray-800 p-4 rounded-lg">
-                  <label htmlFor="userSelect" className="block text-lg font-semibold mb-2">Select a User:</label>
-                  <select id="userSelect" value={selectedUser} onChange={handleUserChange} className="block w-full bg-gray-900 border border-gray-700 text-white py-3 px-4 rounded">
+                  <label htmlFor="userSelect" className="font-averia block text-lg font-semibold mb-2">Select a User:</label>
+                  <select id="userSelect" value={selectedUser} onChange={handleUserChange} className="font-bree block w-full bg-gray-900 border border-gray-700 text-white py-3 px-4 rounded">
                     <option value="">Select User</option>
                     {userlist.map((user, index) => (
                       <option key={index} value={user}>
@@ -106,8 +106,8 @@ const AnalysisSection = () => {
 
           {selectedUser && (
             <div className="bg-gray-800 p-4 rounded-lg mt-4">
-              <span className="text-lg font-semibold">Selected User:</span>
-              <div className="text-xl">{selectedUser}</div>
+              <span className="font-averia text-lg font-semibold">Selected User:</span>
+              <div className="font-bree text-xl">{selectedUser}</div>
             </div>
           )}
 
@@ -116,8 +116,8 @@ const AnalysisSection = () => {
           {
             monthlytimeline && (
               <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col relative">
-                <h1 className="mb-5">Monthly Timeline</h1>
-                <div className="m-auto border-2 border-red-400 ">
+                <h1 className="font-averia mb-5">Monthly Timeline</h1>
+                <div className="font-bree m-auto border-2 border-red-400 ">
                   <CustomLineChart data={monthlytimeline} />
                 </div>
               </div>
@@ -130,8 +130,8 @@ const AnalysisSection = () => {
           {
             dailytimeline && (
               <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
-                <h1 className="mb-5">Daily Timeline</h1>
-                <div className="m-auto border-2 border-red-400">
+                <h1 className="font-averia mb-5">Daily Timeline</h1>
+                <div className="font-bree m-auto border-2 border-red-400">
                   <CustomDailyChart data={dailytimeline} />
                 </div>
               </div>
@@ -141,8 +141,8 @@ const AnalysisSection = () => {
 
           {/* most busy day  */}
           <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
-            <h1 className="mb-5">Most Busy Day</h1>
-            <div className="m-auto">
+            <h1 className="font-averia mb-5">Most Busy Day</h1>
+            <div className="font-bree m-auto">
               <BusyDayChart data={mostbusyday} />
             </div>
           </div>
@@ -150,8 +150,8 @@ const AnalysisSection = () => {
 
           {/* most busy month  */}
           <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
-            <h1 className="mb-5">Most Busy Month</h1>
-            <div className="m-auto">
+            <h1 className="font-averia mb-5">Most Busy Month</h1>
+            <div className="font-bree m-auto">
               <BusyMonthChart data={mostbusymonth} />
             </div>
           </div>
@@ -160,8 +160,8 @@ const AnalysisSection = () => {
           {
             (!selectedUser || selectedUser === "Overall") && (
               <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
-                <h1 className="mb-5">Most Busy User</h1>
-                <div className="m-auto">
+                <h1 className="font-averia mb-5">Most Busy User</h1>
+                <div className="font-bree m-auto">
                   <BusyUserChart data={mostbusyuser} />
                 </div>
               </div>
@@ -170,7 +170,7 @@ const AnalysisSection = () => {
 
           {
             (!selectedUser || selectedUser === "Overall") && (<div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
-              <div className="text-center mx-auto">
+              <div className="font-bree text-center mx-auto">
                 <UserDataTable data={listbusyuser} />
               </div>
             </div>)

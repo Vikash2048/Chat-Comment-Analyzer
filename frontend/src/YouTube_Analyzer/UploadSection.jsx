@@ -49,15 +49,15 @@ const Uploader = () => {
         }
     }
     return (
-        <div className="bg-gray-700 p-8 my-6 rounded-lg shadow-md ">
+        <div className="bg-gray-700 p-8 my-6 rounded-lg shadow-md text-center">
             <div className=''>
-                <h2 className="text-2xl font-bold mb-4">Enter Youtube Video Link</h2>
-                <form onSubmit={handleSubmit}>
+                <h2 className=" font-averia text-2xl font-bold mb-4">Enter Youtube Video Link</h2>
+                <form onSubmit={handleSubmit} >
                     {/* <input type="text" className='text-black w-[600px]' onChange={handleChange} /> */}
-                    <input type="text" placeholder="Enter Url here..." className="input input-bordered w-full max-w-lg text-black" onChange={handleChange} />
+                    <input type="text" placeholder="Enter Url here..." className="font-bree input input-bordered w-full max-w-lg text-black" onChange={handleChange} />
                     <button
                         type="submit"
-                        className="mt-4 ml-4 bg-green-600 hover:bg-green-700
+                        className=" font-bree mt-4 ml-4 bg-green-600 hover:bg-green-700
                      text-white font-bold py-2 px-4 rounded"
                     >
                         Analyze

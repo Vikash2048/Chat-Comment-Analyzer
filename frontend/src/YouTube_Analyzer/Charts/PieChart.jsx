@@ -21,10 +21,16 @@ const PieChart = ({ data }) => {
         ]
     };
 
-    return (<div style={{ width: '400px', height: '400px' }} className='bg-white'>
-        <Pie data={pieData} />
-    </div>)
+    const options = {
+        maintainAspectRatio: false, // Allows the chart to fit into the parent container
+        responsive: true, // Enable responsive behavior
+    };
+
+    return (
+        <div style={{ width: '100%', height: 'auto', minHeight: '400px' }} className='bg-white'>
+            <Pie data={pieData} options={options} />
+        </div>
+    );
 };
 
-
-export default PieChart;
+export default PieChart;

@@ -115,9 +115,9 @@ const AnalysisSection = () => {
 
           {
             monthlytimeline && (
-              <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
+              <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col relative">
                 <h1 className="mb-5">Monthly Timeline</h1>
-                <div className="m-auto">
+                <div className="m-auto border-2 border-red-400 ">
                   <CustomLineChart data={monthlytimeline} />
                 </div>
               </div>
@@ -131,7 +131,7 @@ const AnalysisSection = () => {
             dailytimeline && (
               <div className="bg-gray-800 p-4 rounded-lg mt-4 text-center flex flex-col">
                 <h1 className="mb-5">Daily Timeline</h1>
-                <div className="m-auto">
+                <div className="m-auto border-2 border-red-400">
                   <CustomDailyChart data={dailytimeline} />
                 </div>
               </div>

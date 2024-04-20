@@ -14,10 +14,10 @@ const Analysis = () => {
                     <div className="bg-gray-700 p-8 my-6 rounded-lg shadow-md overflow-hidden">
                         <h2 className="text-2xl font-bold mb-4">Analysis Details</h2>
                         <div className="flex flex-col  gap-4">
-                            <div className="bg-gray-800 p-4 rounded-lg">
+                            <div className="bg-gray-800 p-2 rounded-lg relative">
                                 <h1 className="text-2xl font-semibold mb-4">Video Detail</h1>
-                                <div className="overflow-x-auto border w-[600px]">
-                                    <table className="table">
+                                <div className="overflow-x-auto border w-inherit ">
+                                    <table className="table ">
                                         {/* head */}
                                         <tbody>
                                             {/* row 1 */}
@@ -30,7 +30,7 @@ const Analysis = () => {
                                                 <td>{videoDetail.Channel}</td>
                                             </tr>
                                             <tr>
-                                                <td>Comments : </td>
+                                                <td  className='pr-1'>Comments : </td>
                                                 <td>{videoDetail.Comments}</td>
                                             </tr>
                                             <tr>
@@ -42,7 +42,7 @@ const Analysis = () => {
                                                 <td>{videoDetail.Likes}</td>
                                             </tr>
                                             <tr>
-                                                <td>Resolution : </td>
+                                                <td  className='pr-1'>Resolution : </td>
                                                 <td>{videoDetail.Resolution}</td>
                                             </tr>
                                             
@@ -62,7 +62,7 @@ const Analysis = () => {
 
                             <div className="bg-gray-800 p-4 rounded-lg">
                                 <h1 className="text-2xl font-semibold mb-4">Sentimant Analysis</h1>
-                                <div className="text-md flex justify-between px-10">
+                                <div className="text-md flex md:flex-row flex-col justify-between px-10" >
                                     <p>Netural Comments  : {sa.neutral}</p>
                                     <p>Positive Comments : {sa.positive}</p>
                                     <p>Negative Comments : {sa.negative}</p>

@@ -3,15 +3,12 @@ import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
 const BarChart = ({ data }) => {
-
-
     const dataForBarChart = Object.entries(data).map(([months, value]) => ({
         month: months,
         value: value
     }));
+    
     const chartData = {
-
-
         labels: dataForBarChart.map(item => item.month),
         datasets: [
             {
@@ -41,7 +38,6 @@ const BarChart = ({ data }) => {
         scales: {
             y: {
                 beginAtZero: true,
-
                 ticks: {
                     font: {
                         size: 8,
@@ -67,11 +63,13 @@ const BarChart = ({ data }) => {
                 },
             },
         },
+        maintainAspectRatio: false, // This ensures that aspect ratio does not maintain when resizing
+        responsive: true, // This makes the chart responsive
     };
 
-    return <div className='bg-white' style={{ width: '600px', height: '300px' }}>
+    return <div className='bg-white' style={{ width: '100%', height: 'auto', minHeight: '300px' }}>
         <Bar data={chartData} options={options}/>
     </div> 
 };
 
-export default BarChart;
+export default BarChart;

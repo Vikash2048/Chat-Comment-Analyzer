@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <>
-      <div id='about' className='bg-[url("https://i.pinimg.com/564x/39/9b/b4/399bb4bf47aad332a25d4cdcb0fa79b0.jpg")] w-full  bg-cover bg-no-repeat bg-fixed text-white'>
+      <div id='about' className='bg-[url("../images/aboutbg.jpg")] w-full  bg-cover bg-no-repeat bg-fixed text-white'>
         <div id='title2' className='sticky top-0 z-20 rounded-xl backdrop-blur-2xl hover:bg-[#08387B] duration-1000'>
           <h2 className='font-bree uppercase p-4 text-center text-5xl md:text-7xl'>about</h2>
         </div>

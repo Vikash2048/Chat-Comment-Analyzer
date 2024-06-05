@@ -21,8 +21,8 @@ const Home = () => {
                     <div>
                         <img src="../images/logo_2.png" alt="Logo" className='md:h-52 h-48 rounded-full md:mr-16 ' />
                     </div>
-                    <div>
-                        <h1 className='font-averia uppercase text-center md:text-5xl text-7xl font-bold md:text-[150px]'>Chat & comment analyzer</h1>
+                    <div className='px-20'>
+                        <h1 className='font-averia uppercase text-center md:text-5xl text-[65px] font-bold md:text-[150px] leading-snug'>Chat & comment analyzer</h1>
                     </div>
                 </div>
             </div>

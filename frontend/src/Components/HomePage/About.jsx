@@ -8,8 +8,8 @@ const About = () => {
           <h2 className='font-bree uppercase p-4 text-center text-5xl md:text-7xl'>about</h2>
         </div>
 
-        <div className='flex flex-col'>
-          <div className='hidden md:block md:mt-10'>
+        <div className='flex flex-col mt-10'>
+          <div className='hidden md:block md:mt-10 '>
             <p className='font-averia px-10 text-center text-xl'>
               Have you ever wondered what lurks beneath the surface of a comment section? We did too. That's why we built the Chat & Comment Analyzer, a powerful tool that delves into the world of social media conversations, deciphering the emotions behind the words.
               <br /><br />
